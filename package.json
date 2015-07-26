@@ -1,0 +1,12 @@
+{
+  "name": "chat-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.8.0",
+    "typescript": "Microsoft/TypeScript"
+  }
+}
