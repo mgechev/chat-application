@@ -1,19 +1,20 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var typescript = require('typescript');
+var run = require('gulp-run');
 
 // make a task which runs this script
 //  node node_modules/typescript/bin/tsc.js app/src/* --jsx 'react' --module commonjs
 
-
 gulp.task('default', function () {
-  var tsResult = gulp.src('./app/src/')
+  var tsResult = gulp.src('app/src/**/*.ts')
     .pipe(ts({
-        typescript: typescript,
         noImplicitAny: true,
-        jsx: 'react',
-        out: 'output.js',
-        module: 'commonjs'
+        out: 'output.js'
       }));
-  return tsResult.js.pipe(gulp.dest('./app/built/sadsa'));
+  return tsResult.js.pipe(gulp.dest('app/built/local'));
 });
+
+gulp.task('build-ts', function () {
+  run('node node_modules/typescript/bin/tsc.js app/src/* --jsx \'react\' --module commonjs').exec()
+})
