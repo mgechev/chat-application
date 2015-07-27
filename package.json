@@ -5,10 +5,12 @@
     "react": "^0.13.3"
   },
   "devDependencies": {
+    "babel-core": "^5.8.9",
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",
-    "gulp-run": "^1.6.10",
+    "gulp-rename": "^1.2.2",
     "gulp-typescript": "^2.8.0",
-    "typescript": "Microsoft/TypeScript"
+    "gulp-watch": "^4.3.4",
+    "typescript": "Microsoft/TypeScript#8a2ded3cd6bd0f8e22ec"
   }
 }
