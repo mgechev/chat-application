@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var typescript = require('typescript');
+var browserify = require('gulp-browserify');
 var run = require('gulp-run');
 
 // make a task which runs this script
@@ -16,5 +17,12 @@ gulp.task('default', function () {
 });
 
 gulp.task('build-ts', function () {
-  run('node node_modules/typescript/bin/tsc.js app/src/* --jsx \'react\' --module commonjs').exec()
-})
+  run('node node_modules/typescript/bin/tsc.js app/src/* --jsx \'react\' --module commonjs')
+    .exec();
+});
+
+gulp.task('browserify', function () {
+  return gulp.src(['app/src/app.js'])
+   .pipe(browserify())
+   .pipe(gulp.dest('app/dist/'));
+});
