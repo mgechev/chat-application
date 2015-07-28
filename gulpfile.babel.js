@@ -9,7 +9,7 @@ let tsProject = tsc.createProject('tsconfig.json', {
 });
 
 gulp.task('ts', () => {
-  return gulp.src('./app/src/**/*.tsx')
+  return gulp.src('./app/src/**/*.ts*')
     .pipe(tsc(tsProject))
     .pipe(gulp.dest('./app/dist/'));
 });
