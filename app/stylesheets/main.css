@@ -1,0 +1,9 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #33FFAA;
+}
+
+.hidden {
+    background-color: #336699;;
+}
