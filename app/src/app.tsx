@@ -8,20 +8,36 @@ class DemoProps {
     public age: number;
 }
 
-class Demo extends React.Component<DemoProps, any> {
-  private foo: number;
+class App extends React.Component<DemoProps, any> {
   constructor(props: DemoProps) {
     super(props);
-    this.foo = 42;
+    this.state = {};
+    this.state.hidden = true;
   }
+
+  open() {
+    this.setState({
+      hidden: !this.state.hidden
+    });
+  }
+
   render() {
+    var classNames:string = 'box';
+    if (this.state.hidden === true) {
+        classNames = 'box hidden';
+    }
+
     return (
-      <div>Hello world!</div>
+      <div>
+        <button onClick={this.open.bind(this)}>Click Me!!</button>
+        <div className={classNames}>
+        </div>
+      </div>
     );
   }
 }
 
  React.render(
-    <Example />,
+    <App age={25} name="Nikola" />,
     document.getElementById('example')
 );

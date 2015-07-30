@@ -9,14 +9,16 @@ let tsProject = tsc.createProject('tsconfig.json', {
 });
 
 gulp.task('ts', () => {
-  return gulp.src('./app/src/**/*.tsx')
+  return gulp.src('./app/src/**/*.ts*')
     .pipe(tsc(tsProject))
     .pipe(gulp.dest('./app/dist/'));
 });
 
 gulp.task('browserify', ['ts'], () => {
   return gulp.src('./app/dist/app.js')
-    .pipe(browserify())
+    .pipe(browserify({
+        debug: true
+    }))
     .pipe(rename('bundle.js'))
     .pipe(gulp.dest('./app/dist'));
 });
