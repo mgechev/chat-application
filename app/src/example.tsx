@@ -1,6 +1,6 @@
 /// <reference path="../../typing/react.d.ts" />
 
-import React = require('react');
+import * as React from 'react';
 
 class Example extends React.Component<any, any> {
     private foo: number;
@@ -15,4 +15,4 @@ class Example extends React.Component<any, any> {
     }
 }
 
-export = Example;
+export default Example;

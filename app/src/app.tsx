@@ -1,7 +1,7 @@
 /// <reference path="../../typing/react.d.ts" />
 
-import React = require('react');
-import Example = require('./example');
+import * as React from 'react';
+import Example from './example';
 
 class DemoProps {
     public name: string;
